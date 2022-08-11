@@ -24,9 +24,9 @@ jobs:
           go get
           make binaries
           strip bin/*
-          find bin/
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: artifact
-      #     path: foo
+          mv bin/registry ..
+      - uses: actions/upload-artifact@v3
+        with:
+          name: artifact
+          path: registry
 
